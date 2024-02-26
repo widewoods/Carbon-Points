@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>탄소중립포인트 참여기업 리스트</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+    <body>
+        <div class="list">
+            {% for key, value in businesses.items() %}
+            <button class="business" onclick="location.href='/businessInfo/{{ key }}'">
+                <span class="label">{{ key }}</span>
+            </button>
+            {% endfor %}
+        </div>
+    </body>
+</html>

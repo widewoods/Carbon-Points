@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>탄소중립포인트 정보</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+    <body>
+        <button onclick="location.href='/cpoints'">
+            <span class="label">탄소중립포인트란?</span>
+        </button>
+        <button onclick="location.href='/businessInfo'">
+            <span class="label">참여기업리스트</span>
+        </button>
+    </body>
+    <script>
+        var flag = {{ flag }}
+        if(flag == false){
+            navigator.geolocation.getCurrentPosition((position) => {
+                console.log(position.coords.latitude);
+                console.log(position.coords.longitude);
+                location.href=`/${position.coords.latitude}/${position.coords.longitude}`;
+            });
+        }
+    </script>
+</html>
