@@ -3,7 +3,6 @@ import requests
 from businesses import businesses
 
 app = Flask(__name__)
-REST_API_KEY = '31fe32c8bd7263283c642458364ea6d9'
 got_position = 'false'
 center = {'x': 0, 'y': 0}
 
